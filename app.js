@@ -2,6 +2,8 @@ document.getElementById('button1').addEventListener('click', getText);
 
 document.getElementById('button2').addEventListener('click', getJson);
 
+document.getElementById('button3').addEventListener('click', getExternal);
+
 // GET LOCAL TXT DATA
 function getText(){
   // fetch returen promises
