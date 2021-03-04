@@ -1,5 +1,7 @@
 document.getElementById('button1').addEventListener('click', getText);
 
+document.getElementById('button2').addEventListener('click', getJson);
+
 function getText(){
   // fetch returen promises
   // to get a response from a promise we are
