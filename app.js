@@ -46,7 +46,11 @@ function getJson(){
     .then(function(data){
       console.log(data);
       // log results in dom
-      
+      let output = '';
+      data.forEach(function(posts) {
+        output += `<li>${posts.title} - ${posts.body}</li>`;
+      });
+      document.getElementById('output').innerHTML = output;
     })
     // catching the error
     .catch(function(err){
