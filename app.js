@@ -16,6 +16,7 @@ function getText(){
     // returning the data from res
     .then(function(data){
       console.log(data);
+      // log results in dom
       document.getElementById('ouput').innerHTML = data;
     })
     // catching the error
