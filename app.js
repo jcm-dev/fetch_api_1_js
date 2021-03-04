@@ -59,3 +59,33 @@ function getJson(){
       console.log(err);
     });
 }
+
+// GET EXTERNAL DATA
+function getExternal(){
+  // fetch returen promises
+  // to get a response from a promise we are
+  // using .then()
+
+  // grabbing the json file with fetch
+  // and then returning it with .then
+  // passing it in as 'res'
+  fetch('https://api.github.com/users')
+    .then(function(res){
+
+      return res.json();
+    })
+    // returning the data from res
+    .then(function(data){
+      console.log(data);
+      // log results in dom
+      let output = '';
+      data.forEach(function(user) {
+        output += `<li>${user.login}</li>`;
+      });
+      document.getElementById('output').innerHTML = output;
+    })
+    // catching the error
+    .catch(function(err){
+      console.log(err);
+    });
+}
