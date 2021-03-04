@@ -10,6 +10,15 @@ function getText(){
   // passing it in as 'res'
   fetch('test.txt')
     .then(function(res){
-      console.log(res);
+
+      return res.text();
+    })
+    // returning the data from res
+    .then(function(data){
+      console.log(data);
+    })
+    // catching the error
+    .catch(function(err){
+      console.log(err);
     });
 }
