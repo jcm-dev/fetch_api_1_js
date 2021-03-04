@@ -14,20 +14,15 @@ function getText(){
   // and then returning it with .then
   // passing it in as 'res'
   fetch('test.txt')
-    .then(function(res){
-
-      return res.text();
-    })
+    .then(res => res.text())
     // returning the data from res
-    .then(function(data){
+    .then(data => {
       console.log(data);
       // log results in dom
-      document.getElementById('ouput').innerHTML = data;
+      document.getElementById('output').innerHTML = data;
     })
     // catching the error
-    .catch(function(err){
-      console.log(err);
-    });
+    .catch(err => console.log(err));
 }
 
 // GET LOCAL JSON DATA
@@ -40,12 +35,9 @@ function getJson(){
   // and then returning it with .then
   // passing it in as 'res'
   fetch('posts.json')
-    .then(function(res){
-
-      return res.json();
-    })
+    .then(res => res.json())
     // returning the data from res
-    .then(function(data){
+    .then(data =>{
       console.log(data);
       // log results in dom
       let output = '';
@@ -55,9 +47,7 @@ function getJson(){
       document.getElementById('output').innerHTML = output;
     })
     // catching the error
-    .catch(function(err){
-      console.log(err);
-    });
+    .catch(err => console.log(err));
 }
 
 // GET EXTERNAL DATA
@@ -70,12 +60,9 @@ function getExternal(){
   // and then returning it with .then
   // passing it in as 'res'
   fetch('https://api.github.com/users')
-    .then(function(res){
-
-      return res.json();
-    })
+    .then(res => res.json())
     // returning the data from res
-    .then(function(data){
+    .then(data => {
       console.log(data);
       // log results in dom
       let output = '';
@@ -85,7 +72,5 @@ function getExternal(){
       document.getElementById('output').innerHTML = output;
     })
     // catching the error
-    .catch(function(err){
-      console.log(err);
-    });
+    .catch(err => console.log(err));
 }
